@@ -14,7 +14,21 @@ body {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
 .gallery-title {
+  font-family: 'Yatra One', cursive;
+  text-shadow: 6px 6px 10px rgba(0, 0, 0, 0.75);
+  background-image: linear-gradient(to right, red, blue);
+  color: rgba(255, 255, 255, 0.5);
+  background-clip: text;
   text-align: center;
 }
 
@@ -28,9 +42,78 @@ body {
 
 input {
   width: 200px;
-  height: 25px;
+  height: 29px;
+}
+
+input::placeholder {
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn {
   display: inline-block;
+  padding: 5px;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn-load {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  font-size: 15px;
+
+  font-family: 'Roboto', sans-serif;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.is-visible {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
+.gallery {
+  margin-top: 20px;
+  display: grid;
+  /* grid-template-columns: 33% 33% 33%; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+
+  list-style: none;
+}
+
+.gallery-item {
+  margin: 0 15px;
+  padding: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.stats-item {
+  margin-right: 5px;
+}
+
+.stats-item:last-child {
+  margin-right: 0;
 }

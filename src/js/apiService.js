@@ -5,10 +5,11 @@ export default class PicApiService {
     constructor() {
         this.searchQuery = '';
         this.page = 1;
+        this.perPage = 12;
     }
 
     fetchPictures() {
-        return fetch(`${BASIC_URL}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`)
+        return fetch(`${BASIC_URL}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=${this.perPage}&key=${API_KEY}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Произошла ошибка. Попробуйте позже.');
